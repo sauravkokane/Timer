@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import Link from '@mui/material/Link';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -38,19 +39,19 @@ const Contact = () => {
 
     const list = (anchor: Anchor) => (
         <Box
-            sx={{ width: 250 }}
+            sx={{ width: 400 }}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                {['LinkedIn', 'GitHub', 'Email', 'Twitter', "Phone", "Add More"].map((text, index) => (
-                    <ListItem key={text} disablePadding>
+                {[{ name: 'LinkedIn', data: "https://linkedin.com/in/saurav-kokane-127a161b2" }, { name: 'GitHub', data: 'https://github.com/sauravkokane' }, { name: 'Email', data: 'sbkok6470@.gmail.com' }, { name: 'Twitter', data: '@KokaneSaurav' }, { name: "Phone", data: "+91 123456789" }, { name: "Add More", data: "Add More" }].map((Data, index) => (
+                    <ListItem key={Data['name']} disablePadding>
                         <ListItemButton>
                             <ListItemIcon>
-                                {text === 'LinkedIn' ? <LinkedIn /> : text === 'GitHub' ? <GitHubIcon /> : text === 'Twitter' ? <TwitterIcon /> : text === "Email" ? <MailIcon /> : text === 'Phone' ? <AddIcCallIcon /> : <AddCircleOutlineIcon />}
+                                {Data['name'] === 'LinkedIn' ? <LinkedIn /> : Data['name'] === 'GitHub' ? <GitHubIcon /> : Data['name'] === 'Twitter' ? <TwitterIcon /> : Data['name'] === "Email" ? <MailIcon /> : Data['name'] === 'Phone' ? <AddIcCallIcon /> : <AddCircleOutlineIcon />}
                             </ListItemIcon>
-                            <ListItemText primary={text} />
+                            <ListItemText>{Data['name'] === "LinkedIn" || Data['name'] === "GitHub" || Data['name'] === "Email" ? <Link className='non-decorated-link' href={Data['data']} target="_blank" underline="none">{Data['data']}</Link> : <Link className='non-decorated-link' href="#">{Data['data']}</Link>}</ListItemText>
                         </ListItemButton>
                     </ListItem>
                 ))}

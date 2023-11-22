@@ -42,3 +42,8 @@
 .footer svg {
     color: #f2f2f2;
 }
+
+.non-decorated-link {
+    text-decoration: none;
+    color: #282c34;
+}
