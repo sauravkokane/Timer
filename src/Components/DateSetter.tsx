@@ -12,6 +12,11 @@ import "../Static/styles/datesetter.css";
 const DateSetter = () => {
     const [running, setRunning] = useState(false);
     const [dueDate, setDueDate] = useState(new Date());
+
+    useEffect(() => {
+        if (running === false)
+            setDueDate(new Date());
+    }, [running])
     const run = () => {
         var now = new Date();
         wait(2000);
@@ -35,7 +40,7 @@ const DateSetter = () => {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DesktopDateTimePicker defaultValue={dayjs(new Date())} onChange={OnDateSelect} />
                 </LocalizationProvider>
-                <Button variant="contained" className='btn' onClick={run}>Start</Button>
+                <button className='btn' onClick={run}>Start</button>
             </>}
             {running && <Timer deadline={dueDate} setRunning={setRunning} />}
             {running && <button className='btn cancel' onClick={() => setRunning(false)}>Cancel</button>}

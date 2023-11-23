@@ -23,6 +23,7 @@ const NavigationBar = ({ setNavbarSelection }) => {
             <Stack direction={"row"} spacing={8}>
                 <Item onClick={() => setNavbarSelection('Timer')}>Timer</Item>
                 <Item onClick={() => setNavbarSelection('Clock')}>Clock</Item>
+                <Item onClick={() => setNavbarSelection('Stopwatch')}>Stopwatch</Item>
             </Stack>
         </div>
     )
