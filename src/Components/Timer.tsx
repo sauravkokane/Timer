@@ -17,9 +17,8 @@ const Timer = ({ deadline, setRunning }) => {
     }
     useEffect(() => {
         const interval = setInterval(() => getTime(), 1000);
-
         return () => clearInterval(interval);
-    }, []);
+    }, [deadline]);
     useEffect(() => {
         if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
             alert("Time Up");
