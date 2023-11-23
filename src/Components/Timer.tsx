@@ -29,16 +29,16 @@ const Timer = ({ deadline, setRunning }) => {
         <div className='timer'>
             <div className="timer-container">
                 <div className="time-container">
-                    {isNaN(days) ? "DD" : days}
+                    {isNaN(days) ? "DD" : days.toString().padStart(2, "0")}
                 </div>
                 <div className="time-container">
-                    {isNaN(hours) ? "HH" : hours}
+                    {isNaN(hours) ? "HH" : hours.toString().padStart(2, "0")}
                 </div>
                 <div className="time-container">
-                    {isNaN(minutes) ? "MM" : minutes}
+                    {isNaN(minutes) ? "MM" : minutes.toString().padStart(2, "0")}
                 </div>
                 <div className="time-container">
-                    {isNaN(seconds) ? "SS" : seconds}
+                    {isNaN(seconds) ? "SS" : seconds.toString().padStart(2, "0")}
                 </div>
             </div>
         </div>
