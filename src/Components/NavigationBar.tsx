@@ -13,6 +13,8 @@ const Item = styled(Paper)(({ theme }) => ({
     '&:hover': {
         backgroundColor: theme.palette.mode === 'dark' ? '#f2f2f2' : '#282c34',
         color: theme.palette.mode === 'dark' ? '#282c34' : '#f2f2f2',
+        border: 1,
+        borderColor: '#f2f2f2'
     },
     fontWeight: 'bold',
     fontSize: '30px',

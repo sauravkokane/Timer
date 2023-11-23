@@ -29,7 +29,6 @@ const DateSetter = () => {
     }
     const OnDateSelect = (date) => {
         setDueDate(date);
-        console.log(date);
     }
 
     return (
