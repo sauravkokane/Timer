@@ -2,8 +2,6 @@ import React from 'react';
 import { Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Item from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Contact from './Contact.tsx';
 
 const Footer = () => {
@@ -17,8 +15,8 @@ const Footer = () => {
                 alignItems="center"
                 spacing={2}
             >
-                <Item><Avatar alt='SK' src='../Static/images/saurav_kokane.jpg' /></Item>
-                <Item>Saurav Kokane</Item>
+                <Item><a className='author' href='https://www.linkedin.com/in/saurav-kokane-127a161b2/'><Avatar alt="SK" src="../Static/images/author_image.jpg" /></a></Item>
+                <Item><a className='author' href="https://www.linkedin.com/in/saurav-kokane-127a161b2/">Saurav Kokane</a></Item>
                 <Item><Contact /></Item>
             </Stack>
         </div>

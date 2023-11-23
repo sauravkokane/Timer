@@ -7,7 +7,7 @@ import Footer from "./Components/Footer.tsx";
 import './Static/styles/App.css';
 
 function App() {
-  const [navbarSelection, setNavbarSelection] = useState("Timer");
+  const [navbarSelection, setNavbarSelection] = useState("Clock");
   return (
     <div className="app-body">
       <NavigationBar className="nav-bar" setNavbarSelection={setNavbarSelection} />

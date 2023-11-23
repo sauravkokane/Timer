@@ -13,6 +13,13 @@
     font-size: calc(10px + 2vmin);
 }
 
+.author {
+    text-decoration: None;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
 .nav-bar,
 .footer {
     background-color: #282c34;
