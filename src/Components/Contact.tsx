@@ -51,7 +51,7 @@ const Contact = () => {
                             <ListItemIcon>
                                 {Data['name'] === 'LinkedIn' ? <LinkedIn /> : Data['name'] === 'GitHub' ? <GitHubIcon /> : Data['name'] === 'Twitter' ? <TwitterIcon /> : Data['name'] === "Email" ? <MailIcon /> : Data['name'] === 'Phone' ? <AddIcCallIcon /> : <AddCircleOutlineIcon />}
                             </ListItemIcon>
-                            <ListItemText>{Data['name'] === "LinkedIn" || Data['name'] === "GitHub" || Data['name'] === "Email" ? <Link className='non-decorated-link' href={Data['data']} target="_blank" underline="none">{Data['data']}</Link> : <Link className='non-decorated-link' href="#">{Data['data']}</Link>}</ListItemText>
+                            <ListItemText>{Data['name'] === "LinkedIn" || Data['name'] === "GitHub" ? <Link className='non-decorated-link' href={Data['data']} target="_blank" underline="none" color={"inherit"}>{Data['data']}</Link> : <Link className='non-decorated-link' href="#" underline='none' color={"inherit"}>{Data['data']}</Link>}</ListItemText>
                         </ListItemButton>
                     </ListItem>
                 ))}

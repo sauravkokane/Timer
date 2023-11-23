@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import React, { useState } from 'react';
 import '../Static/styles/timerstyle.css';
-const Timer = ({ deadline }) => {
+const Timer = ({ deadline, setRunning }) => {
 
     const [days, setDays] = useState(Number.NaN);
     const [hours, setHours] = useState(Number.NaN);
@@ -20,13 +20,12 @@ const Timer = ({ deadline }) => {
 
         return () => clearInterval(interval);
     }, []);
-    // if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
-    //     return (
-    //         <div className='timer'>
-    //             <h1>DD, HH, MM, SS</h1>
-    //         </div>
-    //     )
-    // }
+    useEffect(() => {
+        if (days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
+            alert("Time Up");
+            setRunning(false);
+        }
+    }, [minutes])
     return (
         <div className='timer'>
             <div className="timer-container">
